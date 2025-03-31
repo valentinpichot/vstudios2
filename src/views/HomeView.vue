@@ -150,7 +150,7 @@ onMounted(() => {
           fill: 'black', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre en sens inverse
           duration: 0.2,
           ease: 'power1.inOut',
-          delay: delay // Ajoute le délai aléatoire ici
+          delay: delay // Ajoute le délai aléatoire ici wou
         })
       }
     })
