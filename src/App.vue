@@ -1,18 +1,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import Preloader from './components/Preloader.vue'
 </script>
 
 <template>
+  <Preloader />
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <!--    <img alt="Vue logo" class="logo" src="@/assets/img/logo.svg" width="125" height="125" />-->
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">V-Studios</RouterLink>
+        <RouterLink to="/showcase">ShowCase</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
       </nav>
     </div>
   </header>
@@ -21,35 +21,34 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5rem;
+  color: white;
+  transition: all 1s ease;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: black;
+  transition: all 1s ease;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+nav a.router-link-exact-active {
+  background-color: grey;
+  transition: background-color 1s ease;
 }
 
 nav a {
+  transition: all 1s ease;
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  padding: 0 0.5rem;
+  border-left: 1px solid transparent;
+  font-weight: 400;
 }
 
 nav a:first-of-type {
@@ -60,11 +59,7 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
+    //padding-right: calc(var / 2);
   }
 
   header .wrapper {
@@ -79,7 +74,7 @@ nav a:first-of-type {
     font-size: 1rem;
 
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: 0;
   }
 }
 </style>
