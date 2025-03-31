@@ -161,7 +161,7 @@ onMounted(() => {
       duration: 1,
       delay: delay, // Ajoute le délai aléatoire icifsdfÒ
       repeat: -1, // Animation infinie
-      yoyo: true, // Retour à l'état initial après l'animation
+      yoyo: true, // Retour à l'état initial après l'animationgdfgd
       transformOrigin: 'center center' // Spécifie l'origine de la transformation
     })
   })
