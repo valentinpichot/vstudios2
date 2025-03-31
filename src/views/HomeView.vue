@@ -159,7 +159,7 @@ onMounted(() => {
     gsap.to(path, {
       scale: 1.15,
       duration: 1,
-      delay: delay, // Ajoute le délai aléatoire ici
+      delay: delay, // Ajoute le délai aléatoire icifsdfÒ
       repeat: -1, // Animation infinie
       yoyo: true, // Retour à l'état initial après l'animation
       transformOrigin: 'center center' // Spécifie l'origine de la transformation
