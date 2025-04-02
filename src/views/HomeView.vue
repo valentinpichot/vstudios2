@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div id="smooth-wrapper">
+    <div class="homeview" id="smooth-wrapper">
       <div id="smooth-content">
         <section class="hero pad-l">
           <div class="heading">
@@ -10,7 +10,6 @@
               version="1.1"
               viewBox="0 0 154.96 57.57"
             >
-              <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
               <path
                 d="M29.61,5.81l-.63.44c-.8-1.25-1.84-2.24-3.1-2.96-1.27-.73-2.64-1.09-4.1-1.09-1.18,0-2.31.25-3.39.73-1.08.49-2.01,1.15-2.79,1.98-.78.83-1.4,1.82-1.86,2.97-.46,1.15-.69,2.35-.69,3.61s.23,2.46.69,3.61c.46,1.15,1.08,2.14,1.86,2.97s1.71,1.49,2.79,1.98c1.08.49,2.21.73,3.39.73,1.47,0,2.84-.37,4.11-1.1,1.27-.73,2.31-1.72,3.11-2.97l.61.49c-.87,1.35-2,2.41-3.37,3.2s-2.86,1.18-4.46,1.18c-1.29,0-2.51-.27-3.68-.8-1.17-.54-2.18-1.25-3.02-2.15s-1.52-1.97-2.02-3.22c-.5-1.25-.75-2.55-.75-3.92s.25-2.68.75-3.92c.5-1.25,1.18-2.32,2.02-3.22.85-.9,1.85-1.62,3.02-2.15,1.17-.53,2.4-.8,3.68-.8,1.6,0,3.09.4,4.47,1.19,1.38.79,2.5,1.87,3.37,3.23ZM28.37,6.73l-.63.44c-.66-1.03-1.52-1.85-2.57-2.45-1.05-.6-2.18-.9-3.4-.9-.98,0-1.91.2-2.8.61-.89.4-1.66.95-2.3,1.63-.64.68-1.15,1.5-1.53,2.45s-.57,1.94-.57,2.98.19,2.03.57,2.98c.38.95.89,1.77,1.53,2.45.64.68,1.41,1.23,2.3,1.63.89.4,1.83.61,2.8.61,1.22,0,2.36-.3,3.4-.91,1.05-.61,1.9-1.42,2.56-2.46l.61.48c-.73,1.14-1.67,2.04-2.83,2.7-1.16.66-2.4.99-3.75.99-1.44,0-2.77-.38-3.99-1.14-1.22-.76-2.19-1.79-2.9-3.09-.71-1.3-1.07-2.72-1.07-4.25s.36-2.95,1.07-4.25c.71-1.3,1.68-2.33,2.9-3.09,1.22-.76,2.55-1.14,3.99-1.14,1.35,0,2.6.33,3.76,1s2.1,1.58,2.83,2.72ZM27.11,7.63l-.63.44c-.52-.81-1.19-1.45-2.02-1.92-.83-.47-1.72-.71-2.68-.71-1.03,0-1.98.27-2.86.81-.87.54-1.56,1.28-2.07,2.2-.51.93-.76,1.94-.76,3.04s.25,2.11.76,3.04c.51.93,1.2,1.66,2.07,2.2.87.54,1.82.81,2.86.81.96,0,1.86-.24,2.69-.72s1.5-1.13,2.02-1.94l.62.46c-.59.93-1.35,1.66-2.29,2.2-.94.54-1.95.81-3.04.81-1.17,0-2.25-.31-3.24-.92-.99-.61-1.77-1.45-2.35-2.5-.58-1.05-.86-2.2-.86-3.44s.29-2.39.86-3.44c.58-1.05,1.36-1.89,2.35-2.5.99-.61,2.07-.92,3.24-.92,1.09,0,2.1.27,3.04.81.94.54,1.7,1.27,2.29,2.2ZM25.85,8.55l-.62.44c-.38-.6-.87-1.07-1.48-1.42-.61-.35-1.27-.52-1.98-.52-1.15,0-2.14.43-2.95,1.3-.81.87-1.22,1.92-1.22,3.14s.41,2.27,1.22,3.14,1.8,1.3,2.95,1.3c.71,0,1.37-.18,1.98-.53.61-.35,1.1-.83,1.48-1.42l.61.47c-.45.7-1.03,1.26-1.75,1.67s-1.49.62-2.32.62c-.67,0-1.31-.14-1.91-.42-.61-.28-1.13-.65-1.58-1.12-.44-.47-.79-1.03-1.05-1.68s-.39-1.33-.39-2.04.13-1.39.39-2.04c.26-.65.61-1.21,1.05-1.68.44-.47.97-.84,1.58-1.12.61-.28,1.25-.42,1.91-.42.84,0,1.61.21,2.33.62.72.42,1.3.98,1.75,1.69Z"
               />
@@ -65,26 +64,10 @@
             </svg>
           </div>
           <div class="images">
-            <img
-              data-speed="clamp(2.4)"
-              src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM2NTUwMDA&ixlib=rb-4.0.3&q=80&w=400"
-              alt="Image 1"
-            />
-            <img
-              data-speed="clamp(1.8)"
-              src="https://images.unsplash.com/photo-1439853949127-fa647821eba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM2NTQ9Njk&ixlib=rb-4.0.3&q=80&w=400"
-              alt="Image 2"
-            />
-            <img
-              data-speed="clamp(2.2)"
-              src="https://images.unsplash.com/photo-1551376347-075b0121a65b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM2NTQ5MTE&ixlib=rb-4.0.3&q=80&w=400"
-              alt="Image 3"
-            />
-            <img
-              data-speed="clamp(1.5)"
-              src="https://images.unsplash.com/photo-1500817487388-039e623edc21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM2NTQ9MTE&ixlib=rb-4.0.3&q=80&w=400"
-              alt="Image 4"
-            />
+            <img data-speed="clamp(2)" src="@/assets/img/img1.jpg" alt="Image 1" />
+            <img data-speed="clamp(1.8)" src="@/assets/img/img2.jpg" alt="Image 2" />
+            <img data-speed="clamp(2.2)" src="@/assets/img/img3.jpg" alt="Image 3" />
+            <img data-speed="clamp(1.7)" src="@/assets/img/img4.jpg" alt="Image 4" />
           </div>
         </section>
         <section class="spacer"></section>
@@ -98,28 +81,17 @@ import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+// import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 onMounted(() => {
+  const durationCreative = '0.7'
   ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
     smooth: 2,
     effects: true
-  })
-
-  gsap.from('.draw', {
-    drawSVG: '0%',
-    ease: 'linear',
-    scrollTrigger: {
-      trigger: '.heading',
-      start: 'clamp(top center)',
-      scrub: true,
-      pin: '.pin',
-      pinSpacing: false
-    }
   })
   const paths = document.querySelectorAll('.creative path')
   paths.forEach((path) => {
@@ -128,37 +100,40 @@ onMounted(() => {
       trigger: path,
       start: '-=150 -=30', // Débute lorsque le chemin atteint la partie inférieure de la fenêtre
       end: '+=1%', // Termine lorsque le chemin quitte la partie supérieure de la fenêtre
-      scrub: 1, // Lien entre le défilement et l'animation,
+      scrub: true, // Lien entre le défilement et l'animation,
       onEnter: () => {
         gsap.to(path, {
-          fill: 'black',
+          fill: '#5d5555',
           ease: 'power1.inOut',
-          duration: 0.2,
-          delay: delay
+          duration: durationCreative,
+          stagger: 0.1,
+          delay: 0
         })
       },
       onLeave: () => {
         gsap.to(path, {
-          fill: '#7A7575FF', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre
-          duration: 0.2,
-          ease: 'power1.inOut',
-          delay: delay // Ajoute le délai aléatoire ici
+          fill: 'black', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre
+          duration: durationCreative,
+          ease: 'elastic',
+          delay: 0 // Ajoute le délai aléatoire ici
         })
       },
       onLeaveBack: () => {
         gsap.to(path, {
-          fill: 'black', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre en sens inverse
-          duration: 0.2,
-          ease: 'power1.inOut',
-          delay: delay // Ajoute le délai aléatoire ici sdf sdf
+          fill: '#342F2FFF', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre en sens inverse
+          duration: durationCreative,
+          ease: 'elastic',
+          delay: 0 // Ajoute le délai aléatoire ici
         })
       }
     })
 
     const delay = Math.random() // Génère un délai aléatoire entre 0 et 1
     gsap.to(path, {
-      scale: 1.15,
+      scale: 1.1,
       duration: 1,
+      y: '1',
+      x: '1',
       delay: delay, // Ajoute le délai aléatoire icifsdfÒ
       repeat: -1, // Animation infinie
       yoyo: true, // Retour à l'état initial après l'animationgdfgd
