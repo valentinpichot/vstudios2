@@ -81,26 +81,41 @@ import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { isMobile } from 'mobile-device-detect'
 // import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-
 onMounted(() => {
   const durationCreative = '0.7'
+  // const delay = Math.random() // Génère un délai aléatoire entre 0 et 1
+  const paths = document.querySelectorAll('.creative path')
+  const imgs = document.querySelectorAll('.images img')
+  const imgsContainer = document.querySelector('.images')
+  const creative = document.querySelector('.creative')
+  const preloaderDuration = 4000
+
   ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
     smooth: 2,
     effects: true
   })
-  const paths = document.querySelectorAll('.creative path')
-  paths.forEach((path) => {
+  paths.forEach((path, index) => {
     // Configure le ScrollTrigger
+    const delay = index * 0.2 // Exemple : un délai de 0.2 secondes entre chaque animation
+    gsap.to(path, {
+      scale: 1.1,
+      duration: 1,
+      delay: delay,
+      repeat: -1, // Animation infinie
+      yoyo: true, // Retour à l'état initial après l'animation
+      transformOrigin: 'center center' // Spécifie l'origine de la transformation
+    })
     ScrollTrigger.create({
       trigger: path,
-      start: '-=150 -=30', // Débute lorsque le chemin atteint la partie inférieure de la fenêtre
-      end: '+=1%', // Termine lorsque le chemin quitte la partie supérieure de la fenêtre
-      scrub: true, // Lien entre le défilement et l'animation,
+      start: '-=150 -=30',
+      end: '+=1%',
+      scrub: true,
       onEnter: () => {
         gsap.to(path, {
           fill: '#5d5555',
@@ -112,34 +127,51 @@ onMounted(() => {
       },
       onLeave: () => {
         gsap.to(path, {
-          fill: 'black', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre
+          fill: 'black',
+          stagger: 0.1,
           duration: durationCreative,
-          ease: 'elastic',
-          delay: 0 // Ajoute le délai aléatoire ici
+          ease: 'power1.inOut',
+          delay: delay
         })
       },
       onLeaveBack: () => {
         gsap.to(path, {
-          fill: '#342F2FFF', // Réinitialise la couleur de remplissage lorsque le path quitte la fenêtre en sens inverse
           duration: durationCreative,
-          ease: 'elastic',
-          delay: 0 // Ajoute le délai aléatoire ici
+          ease: 'power1.inOut',
+          delay: delay
         })
       }
     })
-
-    const delay = Math.random() // Génère un délai aléatoire entre 0 et 1
-    gsap.to(path, {
-      scale: 1.1,
-      duration: 1,
-      y: '1',
-      x: '1',
-      delay: delay, // Ajoute le délai aléatoire icifsdfÒ
-      repeat: -1, // Animation infinie
-      yoyo: true, // Retour à l'état initial après l'animationgdfgd
-      transformOrigin: 'center center' // Spécifie l'origine de la transformation
-    })
   })
+  setTimeout(() => {
+    appear()
+  }, preloaderDuration)
+
+  function appear() {
+    console.log('appear')
+    gsap.to(imgs, {
+      objectPosition: '100% 100%',
+      duration: isMobile ? 20 : 10,
+      ease: isMobile ? 'linear' : 'power4.inOut',
+      delay: 0,
+      yoyo: true, // Retour à l'état initial après l'animation
+      repeat: -1 // Animation infinie
+    })
+    gsap.to(imgsContainer, {
+      top: isMobile ? '7vh' : '50vh',
+      duration: 2,
+      ease: 'power4.inOut',
+      delay: 0,
+      yoyo: true // Retour à l'état initial après l'animation
+    })
+    gsap.to(creative, {
+      width: isMobile ? '95%' : '150vh',
+      duration: 2,
+      ease: 'power4.inOut',
+      delay: 0,
+      yoyo: true // Retour à l'état initial après l'animation
+    })
+  }
 })
 </script>
 <style lang="scss" scoped></style>
