@@ -5,6 +5,9 @@ import { isMobile } from 'mobile-device-detect'
 import { ref } from 'vue'
 
 const isChecked = ref(false)
+const toggleMenu = () => {
+  isChecked.value = false
+}
 </script>
 
 <template>
@@ -12,7 +15,7 @@ const isChecked = ref(false)
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink class="nav-logo" to="/">
+        <RouterLink class="nav-logo" to="/" @click="toggleMenu">
           <img src="@/assets/img/logo.png" alt="brand logo v-studios" />
         </RouterLink>
         <div v-if="!isMobile">
@@ -28,9 +31,9 @@ const isChecked = ref(false)
         </label>
         <Transition name="fadeHeight">
           <div class="nav-mob" v-if="isChecked">
-            <RouterLink to="/">V-Studios</RouterLink>
-            <RouterLink to="/showcase">ShowCase</RouterLink>
-            <RouterLink to="/contact">Contact</RouterLink>
+            <RouterLink to="/" @click="toggleMenu">V-Studios</RouterLink>
+            <RouterLink to="/showcase" @click="toggleMenu">ShowCase</RouterLink>
+            <RouterLink to="/contact" @click="toggleMenu">Contact</RouterLink>
           </div>
         </Transition>
       </nav>

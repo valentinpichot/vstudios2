@@ -8,7 +8,7 @@
 }
 
 nav {
-  width: 100%;
+  width: 95%;
   font-size: 14px;
   text-align: center;
   display: flex;
@@ -21,9 +21,13 @@ nav {
   position: fixed;
   z-index: 999;
   min-height: 55px;
-  top: 0;
-  background-color: rgba(175, 168, 168, 0.12);
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(250, 249, 249, 0.59);
   backdrop-filter: invert(0.8) blur(3px);
+  border-radius: 10px;
+  overflow: hidden;
 
   .nav-mob {
     display: flex;
@@ -128,7 +132,7 @@ body {
   padding-top: 10vh;
   scroll-behavior: auto;
   color: var(--color-text);
-  background-color: rgba(175, 168, 168, 0.92);
+  background-color: rgba(217, 213, 213, 0.92);
   transition: color 0.5s,
   background-color 0.5s;
   line-height: 1.6;
@@ -148,6 +152,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  .text-basic {
+    font-size: 20px;
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
 }
 
 /*

@@ -3,6 +3,7 @@
     <div class="homeview" id="smooth-wrapper">
       <div id="smooth-content">
         <section class="hero pad-l">
+          <div class="hero-transi"></div>
           <div class="heading">
             <svg
               class="creative"
@@ -67,8 +68,27 @@
             <img data-speed="clamp(2)" src="@/assets/img/img1.jpg" alt="Image 1" />
             <img data-speed="clamp(1.8)" src="@/assets/img/img2.jpg" alt="Image 2" />
             <img data-speed="clamp(2.2)" src="@/assets/img/img3.jpg" alt="Image 3" />
-            <img data-speed="clamp(1.7)" src="@/assets/img/img4.jpg" alt="Image 4" />
+            <img
+              v-if="!isMobile"
+              data-speed="clamp(1.7)"
+              src="@/assets/img/img4.jpg"
+              alt="Image 4"
+            />
           </div>
+        </section>
+        <section class="prez">
+          <p class="text-basic">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, architecto
+            consectetur deserunt dignissimos laudantium provident quod? Architecto dolore pariatur
+            quidem repellat. Aliquam aut distinctio expedita explicabo fugiat fugit sint
+            voluptates!
+          </p>
+          <p class="text-basic">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cum, deserunt excepturi
+            exercitationem explicabo nesciunt, nostrum placeat porro rem sint sit temporibus,
+            voluptate? Consequuntur corporis eos et facere harum quam.
+          </p>
+          <p class="text-basic">LOREMDFJZNEVJEL ZLKDCJZL</p>
         </section>
         <section class="spacer"></section>
       </div>
