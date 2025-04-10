@@ -3,7 +3,7 @@
     <div class="homeview" id="smooth-wrapper">
       <div id="smooth-content">
         <section class="hero pad-l">
-          <div class="hero-transi"></div>
+          <div v-if="isMobile" class="hero-transi"></div>
           <div class="heading">
             <svg
               class="creative"
