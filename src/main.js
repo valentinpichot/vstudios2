@@ -11,8 +11,9 @@ import { isMobile } from 'mobile-device-detect'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import { SplitText } from 'gsap/SplitText'
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, SplitText)
 
 const app = createApp(App)
 

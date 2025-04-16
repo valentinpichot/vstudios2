@@ -3,7 +3,7 @@
     <div class="homeview" id="smooth-wrapper">
       <div id="smooth-content">
         <section class="hero pad-l">
-          <div v-if="isMobile" class="hero-transi"></div>
+          <div class="hero-transi"></div>
           <div class="heading">
             <svg
               class="creative"
@@ -65,31 +65,34 @@
             </svg>
           </div>
           <div class="images">
-            <img data-speed="clamp(2)" src="@/assets/img/img1.jpg" alt="Image 1" />
-            <img data-speed="clamp(1.8)" src="@/assets/img/img2.jpg" alt="Image 2" />
-            <img data-speed="clamp(2.2)" src="@/assets/img/img3.jpg" alt="Image 3" />
-            <img
-              v-if="!isMobile"
-              data-speed="clamp(1.7)"
-              src="@/assets/img/img4.jpg"
-              alt="Image 4"
-            />
+            <video v-if="!isMobile" data-speed="clamp(2)" loop muted autoplay>
+              <source src="@/assets/video/coach.mp4" type="video/mp4" />
+            </video>
+            <video data-speed="clamp(1.8)" loop muted autoplay>
+              <source src="@/assets/video/game.mp4" type="video/mp4" />
+            </video>
+            <video data-speed="clamp(2.2)" loop muted autoplay>
+              <source src="@/assets/video/theKooples.mp4" type="video/mp4" />
+            </video>
+            <video data-speed="clamp(1.7)" loop muted autoplay>
+              <source src="@/assets/video/picard.mp4" type="video/mp4" />
+            </video>
           </div>
+          <div class="hero-transi-bot"></div>
         </section>
-        <section class="prez">
-          <p class="text-basic">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, architecto
-            consectetur deserunt dignissimos laudantium provident quod? Architecto dolore pariatur
-            quidem repellat. Aliquam aut distinctio expedita explicabo fugiat fugit sint
-            voluptates!
-          </p>
-          <p class="text-basic">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cum, deserunt excepturi
-            exercitationem explicabo nesciunt, nostrum placeat porro rem sint sit temporibus,
-            voluptate? Consequuntur corporis eos et facere harum quam.
-          </p>
-          <p class="text-basic">LOREMDFJZNEVJEL ZLKDCJZL</p>
-        </section>
+        <div class="home-staggered">
+          <p id="split-stagger">V-Studios</p>
+        </div>
+        <div class="home-prez">
+          <section class="v-center">
+            <div class="parallax-slab">
+              <img data-speed="auto" src="@/assets/img/city.jpg" alt="" />
+            </div>
+            <div class="parallax-slab-abs">
+              <img data-speed="auto" src="@/assets/img/valoche.png" alt="" />
+            </div>
+          </section>
+        </div>
         <section class="spacer"></section>
       </div>
     </div>
@@ -102,9 +105,9 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { isMobile } from 'mobile-device-detect'
-// import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import { SplitText } from 'gsap/SplitText'
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
 onMounted(() => {
   const durationCreative = '0.7'
   // const delay = Math.random() // Génère un délai aléatoire entre 0 et 1
@@ -112,13 +115,117 @@ onMounted(() => {
   const imgs = document.querySelectorAll('.images img')
   const imgsContainer = document.querySelector('.images')
   const creative = document.querySelector('.creative')
+  const heroTransiBot = document.querySelector('.hero-transi-bot')
+  const homePrez = document.querySelector('.home-prez')
+  const homePrezParallax = document.querySelector('.parallax-slab')
+  const parallaxSlabAbs = document.querySelector('.parallax-slab-abs')
   const preloaderDuration = 4000
+  const colorBlue = 'rgba(61, 77, 148, 0.76)'
 
-  ScrollSmoother.create({
+  const smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
     smooth: 2,
     effects: true
+  })
+  let mySplitText = new SplitText('#split-stagger', { type: 'words,chars' })
+  let chars = mySplitText.chars
+
+  chars.forEach((char, i) => {
+    smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 })
+  })
+  ScrollTrigger.create({
+    trigger: '#smooth-wrapper',
+    start: 'top top',
+    end: '+=1%',
+    scrub: false,
+    onEnter: () => {
+      gsap.to(heroTransiBot, {
+        ease: 'linear',
+        duration: 1,
+        y: isMobile ? -10 : -50,
+        yoyo: true
+      })
+    }
+  })
+  ScrollTrigger.create({
+    trigger: homePrez,
+    start: 'top 40%',
+    end: '+=70%',
+    scrub: 1,
+    toggleActions: 'play reverse play reverse', // Play forward and backward on enter/leave
+    onEnter: () => {
+      gsap.to(homePrezParallax, {
+        ease: 'linear',
+        duration: 1,
+        width: '100%',
+        yoyo: true,
+        borderRadius: 0,
+        transform: 'scale(1.1)',
+        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
+      })
+      gsap.to(parallaxSlabAbs, {
+        ease: 'power4',
+        duration: 1,
+        autoAlpha: 1,
+        y: 0,
+        yoyo: true,
+      })
+    },
+    onEnterBack: () => {
+      gsap.to(homePrezParallax, {
+        ease: 'linear',
+        duration: 1,
+        width: '100%',
+        borderRadius: 0,
+        transform: 'scale(1.1)',
+        yoyo: true,
+        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
+      })
+      gsap.to(parallaxSlabAbs, {
+        ease: 'power4',
+        duration: 1,
+        autoAlpha: 1,
+        y: 0,
+        yoyo: true,
+      })
+    },
+    onLeave: () => {
+      gsap.to(homePrezParallax, {
+        ease: 'power4',
+        duration: 2,
+        width: '90%',
+        borderRadius: '15px',
+        transform: 'scale(1)',
+        yoyo: true,
+        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
+      })
+      gsap.to(parallaxSlabAbs, {
+        ease: 'power4',
+        duration: 1,
+        autoAlpha: 0,
+        y: 50,
+        yoyo: true,
+      })
+    },
+    onLeaveBack: () => {
+      gsap.to(homePrezParallax, {
+        ease: 'power4',
+        duration: 2,
+        width: '90%',
+        borderRadius: '15px',
+        transform: 'scale(1)',
+        yoyo: true,
+        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
+      })
+      gsap.to(parallaxSlabAbs, {
+        ease: 'power4',
+        duration: 1,
+        autoAlpha: 0,
+        y: 50,
+        yoyo: true,
+      })
+    }
   })
   paths.forEach((path, index) => {
     // Configure le ScrollTrigger
@@ -138,7 +245,7 @@ onMounted(() => {
       scrub: true,
       onEnter: () => {
         gsap.to(path, {
-          fill: '#5d5555',
+          fill: '#293b8a',
           ease: 'power1.inOut',
           duration: durationCreative,
           stagger: 0.1,
@@ -147,7 +254,7 @@ onMounted(() => {
       },
       onLeave: () => {
         gsap.to(path, {
-          fill: 'black',
+          fill: colorBlue,
           stagger: 0.1,
           duration: durationCreative,
           ease: 'power1.inOut',
@@ -156,6 +263,7 @@ onMounted(() => {
       },
       onLeaveBack: () => {
         gsap.to(path, {
+          fill: '#182457',
           duration: durationCreative,
           ease: 'power1.inOut',
           delay: delay

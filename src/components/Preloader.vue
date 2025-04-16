@@ -16,7 +16,7 @@
           <g />
         </defs>
         <path
-          fill="#000000"
+          fill="rgba(61, 77, 148, 0.76)"
           d="M 183.074219 61.917969 C 215.992188 61.917969 247.566406 74.992188 270.84375 98.269531 C 294.121094 121.550781 307.199219 153.121094 307.199219 186.039062 L 307.199219 188.949219 C 307.199219 221.867188 294.121094 253.4375 270.84375 276.71875 C 247.566406 299.996094 215.992188 313.070312 183.074219 313.070312 C 114.523438 313.070312 58.949219 257.5 58.949219 188.949219 L 58.949219 186.039062 C 58.949219 117.488281 114.523438 61.917969 183.074219 61.917969 Z M 183.074219 61.917969 "
           fill-opacity="1"
           fill-rule="nonzero"
@@ -28,8 +28,8 @@
               offset="0.01"
               style="stop-color: white; stop-opacity: 1"
             />
-            <stop offset="0" style="stop-color: black; stop-opacity: 1" />
-            <stop offset="1" style="stop-color: black; stop-opacity: 1" />
+            <stop offset="0" style="stop-color: rgba(61, 77, 148, 0.76); stop-opacity: 1" />
+            <stop offset="1" style="stop-color: rgba(61, 77, 148, 0.76); stop-opacity: 1" />
           </linearGradient>
         </defs>
         <g id="valBG" fill="url(#gradient)" fill-opacity="1">
@@ -81,19 +81,19 @@ export default defineComponent({
                 preloader.value.style.display = 'none'
               }
             }
-          }),
-            gsap.fromTo(
-              valBGContainer.value,
-              {
-                clipPath: 'circle(8%)'
-              },
-              {
-                ease: 'easeInOut',
-                delay: preloaderDuration / 2,
-                duration: preloaderDuration / 1.8,
-                clipPath: 'circle(100%)'
-              }
-            )
+          })
+          // gsap.fromTo(
+          //   valBGContainer.value,
+          //   {
+          //     clipPath: 'circle(8%)'
+          //   },
+          //   {
+          //     ease: 'easeInOut',
+          //     delay: preloaderDuration / 2,
+          //     duration: preloaderDuration / 1.8,
+          //     clipPath: 'circle(100%)'
+          //   }
+          // )
           // gsap.fromTo(
           //   valBG.value,
           //   {
@@ -131,7 +131,7 @@ export default defineComponent({
       }
       if (linearRemplissage.value) {
         gsap.to(linearRemplissage.value, {
-          attr: { offset: "1" },
+          attr: { offset: '1' },
           ease: 'power1.inOut',
           delay: preloaderDuration / 2,
           duration: preloaderDuration / 2
