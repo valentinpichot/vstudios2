@@ -72,7 +72,7 @@
               <source src="@/assets/video/game.mp4" type="video/mp4" />
             </video>
             <video data-speed="clamp(2.2)" loop muted autoplay>
-              <source src="@/assets/video/theKooples.mp4" type="video/mp4" />
+              <source src="@/assets/video/katespade.mp4" type="video/mp4" />
             </video>
             <video data-speed="clamp(1.7)" loop muted autoplay>
               <source src="@/assets/video/picard.mp4" type="video/mp4" />
@@ -86,10 +86,20 @@
         <div class="home-prez">
           <section class="v-center">
             <div class="parallax-slab">
-              <img data-speed="auto" src="@/assets/img/city.jpg" alt="" />
+              <video data-speed="auto" loop muted autoplay>
+                <source src="@/assets/video/video-prez.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="parallax-slab-abs">
-              <img data-speed="auto" src="@/assets/img/valoche.png" alt="" />
+              <img src="@/assets/img/valoche.png" alt="" />
+            </div>
+            <div class="parallax-text">
+              <p class="topic">About me</p>
+              <p>PARIS BASED</p>
+              <p>FreeLance</p>
+              <p>Front-end</p>
+              <p>creative developer</p>
+              <p>Animation & interaction</p>
             </div>
           </section>
         </div>
@@ -100,7 +110,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
@@ -121,6 +131,7 @@ onMounted(() => {
   const parallaxSlabAbs = document.querySelector('.parallax-slab-abs')
   const preloaderDuration = 4000
   const colorBlue = 'rgba(61, 77, 148, 0.76)'
+  const parallaxTexts = document.querySelectorAll('.parallax-text p')
 
   const smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
@@ -150,83 +161,69 @@ onMounted(() => {
   })
   ScrollTrigger.create({
     trigger: homePrez,
-    start: 'top 40%',
+    start: 'top 60%',
     end: '+=70%',
     scrub: 1,
-    toggleActions: 'play reverse play reverse', // Play forward and backward on enter/leave
-    onEnter: () => {
-      gsap.to(homePrezParallax, {
+    toggleActions: 'play reverse play reverse',
+    animation: gsap.fromTo(
+      homePrezParallax,
+      {
+        ease: 'linear',
+        duration: 1,
+        width: '90%',
+        borderRadius: '15px',
+        transform: 'scale(1)',
+        toggleActions: 'play reverse play reverse',
+        yoyo: true
+      },
+      {
         ease: 'linear',
         duration: 1,
         width: '100%',
         yoyo: true,
         borderRadius: 0,
         transform: 'scale(1.1)',
-        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
-      })
-      gsap.to(parallaxSlabAbs, {
-        ease: 'power4',
-        duration: 1,
-        autoAlpha: 1,
-        y: 0,
-        yoyo: true,
-      })
-    },
-    onEnterBack: () => {
-      gsap.to(homePrezParallax, {
-        ease: 'linear',
-        duration: 1,
-        width: '100%',
-        borderRadius: 0,
-        transform: 'scale(1.1)',
-        yoyo: true,
-        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
-      })
-      gsap.to(parallaxSlabAbs, {
-        ease: 'power4',
-        duration: 1,
-        autoAlpha: 1,
-        y: 0,
-        yoyo: true,
-      })
-    },
-    onLeave: () => {
-      gsap.to(homePrezParallax, {
-        ease: 'power4',
-        duration: 2,
-        width: '90%',
-        borderRadius: '15px',
-        transform: 'scale(1)',
-        yoyo: true,
-        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
-      })
-      gsap.to(parallaxSlabAbs, {
-        ease: 'power4',
-        duration: 1,
-        autoAlpha: 0,
-        y: 50,
-        yoyo: true,
-      })
-    },
-    onLeaveBack: () => {
-      gsap.to(homePrezParallax, {
-        ease: 'power4',
-        duration: 2,
-        width: '90%',
-        borderRadius: '15px',
-        transform: 'scale(1)',
-        yoyo: true,
-        toggleActions: 'play reverse play reverse' // Play forward and backward on enter/leave
-      })
-      gsap.to(parallaxSlabAbs, {
-        ease: 'power4',
-        duration: 1,
-        autoAlpha: 0,
-        y: 50,
-        yoyo: true,
-      })
-    }
+        toggleActions: 'play reverse play reverse'
+      }
+    )
   })
+  ScrollTrigger.create({
+    trigger: homePrez,
+    start: 'top 60%',
+    end: '+=70%',
+    scrub: 1,
+    toggleActions: 'play reverse play reverse',
+    animation: gsap.to(parallaxSlabAbs, {
+      ease: 'power4',
+      duration: 1,
+      autoAlpha: 1,
+      y: -1,
+      yoyo: true
+    })
+  })
+  parallaxTexts.forEach((parallaxText, index) => {
+    gsap.fromTo(
+      parallaxText,
+      {
+        autoAlpha: 0
+      },
+      {
+        autoAlpha: 1,
+        y: isMobile ? 50 * index : 100 * index,
+        duration: 0.5,
+        ease: 'power2.inOut',
+        delay: 0.2 * index,
+        scrollTrigger: {
+          trigger: homePrez,
+          start: 'top 60%',
+          end: '+=70%',
+          scrub: 1,
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    )
+  })
+
   paths.forEach((path, index) => {
     // Configure le ScrollTrigger
     const delay = index * 0.2 // Exemple : un délai de 0.2 secondes entre chaque animation

@@ -92,6 +92,8 @@
 
   .home-prez {
     position: relative;
+    overflow: hidden;
+
     .v-center {
       display: flex;
       align-items: center;
@@ -99,7 +101,7 @@
     }
     .parallax-slab {
       position: relative;
-      height: 500px;
+      height: 90vh;
       width: 90%;
       margin: auto;
       overflow: hidden;
@@ -108,7 +110,7 @@
         height: 70vh;
       }
 
-      img {
+      img, video {
         position: absolute;
         z-index: 0;
         bottom: 0;
@@ -118,12 +120,48 @@
       }
     }
     .parallax-slab-abs {
+      opacity: 0;
       position: absolute;
       bottom: 0;
-      left: 10vh;
-      opacity: 0;
-      transform: translateY(20%);
-      width: 40vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20vh;
+      @media (min-width: 1024px) {
+        width: 30vh;
+        left: 10vh;
+        transform: translateX(0);
+      }
+    }
+
+    .parallax-text {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 25%;
+      justify-content: center;
+      column-gap: 0;
+      z-index: 10;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: start;
+        top: 20%;
+      }
+      p {
+        opacity: 0;
+        font-size: 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 1;
+        white-space: nowrap;
+        &.topic {
+          font-size: 60px;
+        }
+      }
     }
   }
 
