@@ -15,7 +15,7 @@ nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(61, 77, 148, 0.86);
+  background-color: $blueLight;
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 4px 0 rgba(84, 116, 180, 0.19);
   border-radius: 0;
@@ -96,7 +96,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: #293b8a;
+  color: $blue;
   transition: all 0.7s ease-in-out;
   background-color: rgba(255, 255, 255, 0.84);
 }

@@ -82,32 +82,6 @@ export default defineComponent({
               }
             }
           })
-          // gsap.fromTo(
-          //   valBGContainer.value,
-          //   {
-          //     clipPath: 'circle(8%)'
-          //   },
-          //   {
-          //     ease: 'easeInOut',
-          //     delay: preloaderDuration / 2,
-          //     duration: preloaderDuration / 1.8,
-          //     clipPath: 'circle(100%)'
-          //   }
-          // )
-          // gsap.fromTo(
-          //   valBG.value,
-          //   {
-          //     fill: 'rgba(23,22,22,0.1)',
-          //     transform: 'scale(0.9)'
-          //   },
-          //   {
-          //     ease: 'easeInOut',
-          //     delay: preloaderDuration / 2,
-          //     duration: preloaderDuration / 2,
-          //     fill: 'white',
-          //     transform: 'scale(1.2)'
-          //   }
-          // )
         }
       }
     )

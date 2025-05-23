@@ -83,12 +83,13 @@
         <div class="home-staggered">
           <p id="split-stagger">V-Studios</p>
         </div>
-        <div class="home-prez">
-          <section class="v-center">
+        <section class="home-prez">
+          <div class="v-center">
             <div class="parallax-slab">
-              <video data-speed="auto" loop muted autoplay>
-                <source src="@/assets/video/video-prez.mp4" type="video/mp4" />
-              </video>
+              <img src="@/assets/img/prez-img3.jpg" alt="" />
+              <!--              <video data-speed="auto" loop muted autoplay>-->
+              <!--                <source src="@/assets/video/video-prez.mp4" type="video/mp4" />-->
+              <!--              </video>-->
             </div>
             <div class="parallax-slab-abs">
               <img src="@/assets/img/valoche.png" alt="" />
@@ -101,26 +102,31 @@
               <p>creative developer</p>
               <p>Animation & interaction</p>
             </div>
-          </section>
-        </div>
-        <section class="spacer"></section>
+          </div>
+        </section>
+        <section class="showcase-view">
+          <div class="showcase-staggered">
+            <p id="split-stagger-showcase">ShowCase</p>
+          </div>
+          <ShowcaseView />
+        </section>
       </div>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { isMobile } from 'mobile-device-detect'
 import { SplitText } from 'gsap/SplitText'
+import ShowcaseView from '@/views/ShowcaseView.vue'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
 onMounted(() => {
   const durationCreative = '0.7'
-  // const delay = Math.random() // Génère un délai aléatoire entre 0 et 1
   const paths = document.querySelectorAll('.creative path')
   const imgs = document.querySelectorAll('.images img')
   const imgsContainer = document.querySelector('.images')
@@ -140,9 +146,14 @@ onMounted(() => {
     effects: true
   })
   let mySplitText = new SplitText('#split-stagger', { type: 'words,chars' })
+  let mySplitTextShowcase = new SplitText('#split-stagger-showcase', { type: 'words,chars' })
   let chars = mySplitText.chars
+  let charsShowcase = mySplitTextShowcase.chars
 
   chars.forEach((char, i) => {
+    smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 })
+  })
+  charsShowcase.forEach((char, i) => {
     smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 })
   })
   ScrollTrigger.create({
@@ -209,7 +220,7 @@ onMounted(() => {
       },
       {
         autoAlpha: 1,
-        y: isMobile ? 50 * index : 100 * index,
+        y: isMobile ? 50 * index : 80 * index,
         duration: 0.5,
         ease: 'power2.inOut',
         delay: 0.2 * index,

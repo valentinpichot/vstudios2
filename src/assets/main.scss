@@ -7,15 +7,19 @@
 @import './font.scss';
 @import './nav.scss';
 @import './transition.scss';
+@import './footer.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
 #app {
   font-family: "monoton", serif;
   scroll-behavior: auto;
+  height: 100%;
 }
+
 main {
   font-family: 'bueno', sans-serif;
+  height: 100%;
 }
 
 @media (hover: hover) {

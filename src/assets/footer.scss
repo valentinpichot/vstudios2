@@ -1,0 +1,10 @@
+.app-footer {
+  background-color: $blueLight;
+  text-align: center;
+  font-family: 'bueno', sans-serif;
+
+  &__container {
+    padding: 20px;
+    color: white;
+  }
+}

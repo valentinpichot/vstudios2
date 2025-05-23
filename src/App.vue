@@ -1,8 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import Preloader from './components/Preloader.vue'
+import Preloader from '@/components/Preloader.vue'
 import { isMobile } from 'mobile-device-detect'
 import { ref } from 'vue'
+import AppFooter from '@/components/footer.vue'
 
 const isChecked = ref(false)
 const toggleMenu = () => {
@@ -39,6 +40,6 @@ const toggleMenu = () => {
       </nav>
     </div>
   </header>
-
   <RouterView />
+  <AppFooter />
 </template>
