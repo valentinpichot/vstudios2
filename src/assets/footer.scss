@@ -1,0 +1,79 @@
+.app-footer {
+  position: relative;
+  height: 10vh;
+  background-color: $blueLight;
+  text-align: center;
+  font-family: 'bueno', sans-serif;
+  text-transform: uppercase;
+
+  &__container {
+    padding: 10px 20px;
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    &__left {
+      display: flex;
+      column-gap: 0.7rem;
+
+      #ig {
+        width: 18px;
+        cursor: pointer;
+
+      }
+
+      #linkedin {
+        width: 22px;
+        cursor: pointer;
+
+      }
+    }
+
+    &__mid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      svg {
+        width: 40px;
+      }
+
+      &__flex {
+        display: flex;
+        column-gap: 0.2rem;
+
+        p {
+          font-weight: 900 !important;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 12px;
+          opacity: 0.3;
+
+        }
+      }
+    }
+
+    &__right {
+      text-align: right;
+      display: flex;
+      column-gap: 0.7rem;
+      justify-content: end;
+
+
+      #email {
+        width: 24px;
+        cursor: pointer;
+      }
+
+      #tel {
+        width: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+}
