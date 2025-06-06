@@ -86,8 +86,8 @@
         <section class="home-prez">
           <div class="v-center">
             <div class="parallax-slab">
-              <img src="@/assets/img/prez-img3.jpg" alt="" />
             </div>
+
             <div class="parallax-slab-abs">
               <img src="@/assets/img/valoche.png" alt="" />
             </div>
@@ -102,6 +102,7 @@
           </div>
         </section>
         <section class="showcase-view">
+<!--          <div class="hero-transi-prez"></div>-->
           <div class="showcase-staggered">
             <p id="split-stagger-showcase">ShowCase</p>
           </div>
