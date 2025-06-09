@@ -84,6 +84,8 @@
           <p id="split-stagger">V-Studios</p>
         </div>
         <section class="home-prez">
+          <div class="home-prezTop-transi"></div>
+
           <div class="v-center">
             <div class="parallax-slab">
             </div>
@@ -102,7 +104,7 @@
           </div>
         </section>
         <section class="showcase-view">
-<!--          <div class="hero-transi-prez"></div>-->
+          <div class="hero-transi-prez"></div>
           <div class="showcase-staggered">
             <p id="split-stagger-showcase">ShowCase</p>
           </div>
