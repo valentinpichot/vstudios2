@@ -1,0 +1,70 @@
+
+.contact {
+  height: 100dvh;
+  background: url("@/assets/img/v.svg");
+  background-color: rgba(88, 102, 163, 0.75);
+  background-repeat: space;
+  background-size: 30px;
+  position: relative;
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60vh;
+    width: 70vw;
+
+    &__inside {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+
+
+      .left {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        p {
+          font-size: 50px;
+        }
+
+      }
+
+      .right {
+        text-align: right;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        p {
+          font-size: 50px;
+        }
+      }
+      .right-first {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: white;
+      }
+      .right-second {
+        opacity: 0;
+        height: 0;
+        position: absolute;
+      }
+    }
+
+    p {
+      font-family: 'bueno', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: bold;
+      line-height: 1;
+      white-space: nowrap;
+      color: white;
+    }
+  }
+}
