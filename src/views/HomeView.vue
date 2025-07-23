@@ -96,7 +96,7 @@
             <div class="parallax-text">
               <p class="topic">About me</p>
               <p>PARIS BASED</p>
-              <p>FreeLance</p>
+<!--              <p>FreeLance</p>-->
               <p>Front-end</p>
               <p>creative developer</p>
               <p>Animation & interaction</p>
@@ -294,7 +294,7 @@ onMounted(() => {
       repeat: -1 // Animation infinie
     })
     gsap.to(imgsContainer, {
-      top: isMobile ? '7vh' : '50vh',
+      top: isMobile ? '10vh' : '50vh',
       duration: 2,
       ease: 'power4.inOut',
       delay: 0,

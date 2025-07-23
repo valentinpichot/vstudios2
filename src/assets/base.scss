@@ -11,8 +11,8 @@ $blue: #293b8a;
 }
 body {
   min-height: 100vh;
-  padding-top: 6vh;
   scroll-behavior: auto;
+  overflow-x: hidden;
   color: var(--color-text);
   background-color: rgb(255, 255, 255);
   transition: color 0.5s,
@@ -34,6 +34,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media (min-width: 1024px) {
+    overflow-x: visible;
+  }
 
   .text-basic {
     font-size: 20px;

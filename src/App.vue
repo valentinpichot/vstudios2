@@ -21,8 +21,7 @@ const toggleMenu = () => {
         </RouterLink>
         <div v-if="!isMobile">
           <RouterLink to="/">V-Studios</RouterLink>
-          <RouterLink to="/showcase">ShowCase</RouterLink>
-          <RouterLink to="/contact">Contact</RouterLink>
+          <RouterLink class="nav-contact" to="/contact">Contact</RouterLink>
         </div>
         <label v-if="isMobile" for="menu" class="menu" :class="{ checked: isChecked }">
           <input id="menu" type="checkbox" v-model="isChecked" />
@@ -33,7 +32,6 @@ const toggleMenu = () => {
         <Transition name="fadeHeight">
           <div class="nav-mob" v-if="isChecked">
             <RouterLink to="/" @click="toggleMenu">V-Studios</RouterLink>
-            <RouterLink to="/showcase" @click="toggleMenu">ShowCase</RouterLink>
             <RouterLink to="/contact" @click="toggleMenu">Contact</RouterLink>
           </div>
         </Transition>

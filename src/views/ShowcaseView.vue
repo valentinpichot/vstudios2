@@ -1,9 +1,36 @@
 <template>
-  <div class="showcase">
+  <div id="showcase-section" class="showcase">
     <div class="image-grid-container">
       <div class="image-grid">
-        <div :class="`image-grid-overflow img${i}`" v-for="i in imageCount" :key="i">
-          <img :src="`/src/assets/img/showcase/img${i}.jpg`" :alt="`Image ${i}`" />
+        <div class="image-grid-overflow img">
+          <video loop muted autoplay>
+            <source src="@/assets/video/travel-large.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="image-grid-overflow img">
+          <video loop muted autoplay>
+            <source src="@/assets/video/car-large.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="image-grid-overflow img">
+          <video loop muted autoplay>
+            <source src="@/assets/video/fdj-large.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="image-grid-overflow img">
+          <video loop muted autoplay>
+            <source src="@/assets/video/coach-large.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="image-grid-overflow img">
+          <video loop muted autoplay>
+            <source src="@/assets/video/bio-large.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="image-grid-overflow img">
+          <video loop muted autoplay>
+            <source src="@/assets/video/matel-large.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
 
@@ -96,16 +123,16 @@ export default defineComponent({
           duration: 0.5
         },
         '<'
+      ).to(
+        '.showcase-view',
+        {
+          ease: 'power1.inOut',
+          duration: 0.5,
+          background:
+            'radial-gradient(circle, rgba(0, 0, 0, 0) 70%, rgb(88 102 163 / 0%) 100%) 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0)'
+        },
+        '>'
       )
-        .to(
-          '.showcase-view',
-          {
-            ease: 'power1.inOut',
-            duration: 0.5,
-            background: 'radial-gradient(circle, rgba(0, 0, 0, 0) 70%, rgb(88 102 163 / 0%) 100%) 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0)'
-          },
-          '>'
-        )
     })
     return {
       imageCount

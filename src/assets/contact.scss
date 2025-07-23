@@ -1,6 +1,6 @@
 
 .contact {
-  height: 100dvh;
+  height: 90vh;
   background: url("@/assets/img/v.svg");
   background-color: rgba(88, 102, 163, 0.75);
   background-repeat: space;
@@ -17,10 +17,13 @@
 
     &__inside {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       justify-content: center;
       height: 100%;
       width: 100%;
+      @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+      }
 
 
       .left {
@@ -28,7 +31,8 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
-        p {
+        font-size: 30px;
+        @media (min-width: 1024px) {
           font-size: 50px;
         }
 
@@ -41,7 +45,10 @@
         flex-direction: column;
         position: relative;
         p {
-          font-size: 50px;
+          font-size: 30px;
+          @media (min-width: 1024px) {
+            font-size: 50px;
+          }
         }
       }
       .right-first {
@@ -58,7 +65,6 @@
 
     p {
       font-family: 'bueno', sans-serif;
-      font-size: 2rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       font-weight: bold;

@@ -1,7 +1,7 @@
 <template>
   <footer class="app-footer">
-    <div class="app-footer__container">
-      <div class="app-footer__container__left">
+    <div @click="navigateToContact" class="app-footer__container">
+      <div @click="navigateToContact" class="app-footer__container__left">
         <svg id="ig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
           <path
             fill="white"
@@ -121,7 +121,7 @@
           <p>©</p>
         </div>
       </div>
-      <div class="app-footer__container__right">
+      <div @click="navigateToContact" class="app-footer__container__right">
         <svg id="email" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7"
@@ -170,8 +170,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
-  name: 'AppFooter'
+  name: 'AppFooter',
+  setup() {
+    const router = useRouter()
+
+    const navigateToContact = () => {
+      router.push('/contact')
+    }
+
+    return { navigateToContact }
+  }
 })
 </script>
