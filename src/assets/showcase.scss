@@ -10,7 +10,7 @@
     place-content: center;
     grid-template-columns: repeat(2, min(33vw, 250px));
     grid-template-rows: repeat(3, min(25dvh, 25vh));
-    gap: 0px;
+    gap: 1rem;
     overflow: hidden;
     cursor: pointer;
     @media (min-width: 1024px) {
