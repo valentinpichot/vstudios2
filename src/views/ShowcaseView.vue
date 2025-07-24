@@ -3,32 +3,32 @@
     <div class="image-grid-container">
       <div class="image-grid">
         <div class="image-grid-overflow img">
-          <video loop muted autoplay>
+          <video loop muted autoplay playsinline preload="auto">
             <source src="@/assets/video/travel-large.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="image-grid-overflow img">
-          <video loop muted autoplay>
+          <video loop muted autoplay playsinline preload="auto">
             <source src="@/assets/video/car-large.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="image-grid-overflow img">
-          <video loop muted autoplay>
+          <video loop muted autoplay playsinline preload="auto">
             <source src="@/assets/video/fdj-large.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="image-grid-overflow img">
-          <video loop muted autoplay>
+          <video loop muted autoplay playsinline preload="auto">
             <source src="@/assets/video/coach-large.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="image-grid-overflow img">
-          <video loop muted autoplay>
+          <video loop muted autoplay playsinline preload="auto">
             <source src="@/assets/video/bio-large.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="image-grid-overflow img">
-          <video loop muted autoplay>
+          <video loop muted autoplay playsinline preload="auto">
             <source src="@/assets/video/matel-large.mp4" type="video/mp4" />
           </video>
         </div>

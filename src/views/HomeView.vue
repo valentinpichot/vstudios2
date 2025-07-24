@@ -65,16 +65,16 @@
             </svg>
           </div>
           <div class="images">
-            <video v-if="!isMobile" data-speed="clamp(2)" loop muted autoplay>
+            <video v-if="!isMobile" data-speed="clamp(2)" loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/coach.mp4" type="video/mp4" />
             </video>
-            <video data-speed="clamp(1.8)" loop muted autoplay>
+            <video data-speed="clamp(1.8)"loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/game.mp4" type="video/mp4" />
             </video>
-            <video data-speed="clamp(2.2)" loop muted autoplay>
+            <video data-speed="clamp(2.2)" loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/katespade.mp4" type="video/mp4" />
             </video>
-            <video data-speed="clamp(1.7)" loop muted autoplay>
+            <video data-speed="clamp(1.7)" loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/picard.mp4" type="video/mp4" />
             </video>
           </div>
@@ -96,7 +96,6 @@
             <div class="parallax-text">
               <p class="topic">About me</p>
               <p>PARIS BASED</p>
-<!--              <p>FreeLance</p>-->
               <p>Front-end</p>
               <p>creative developer</p>
               <p>Animation & interaction</p>
@@ -142,9 +141,13 @@ onMounted(() => {
   const smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
+    normalizeScroll: false,
+    ignoreMobileResize: true,
     smooth: 2,
+    smoothTouch: 2,
     effects: true
   })
+  ScrollTrigger.normalizeScroll(true)
   let mySplitText = new SplitText('#split-stagger', { type: 'words,chars' })
   let mySplitTextShowcase = new SplitText('#split-stagger-showcase', { type: 'words,chars' })
   let chars = mySplitText.chars
@@ -294,7 +297,7 @@ onMounted(() => {
       repeat: -1 // Animation infinie
     })
     gsap.to(imgsContainer, {
-      top: isMobile ? '10vh' : '50vh',
+      top: isMobile ? '15vh' : '30vh',
       duration: 2,
       ease: 'power4.inOut',
       delay: 0,
