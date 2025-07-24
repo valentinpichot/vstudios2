@@ -12,7 +12,6 @@
     grid-template-rows: repeat(3, min(25dvh, 25dvh));
     gap: 1rem;
     overflow: hidden;
-    cursor: pointer;
     @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 25vw);
       grid-template-rows: repeat(2, 20vw);

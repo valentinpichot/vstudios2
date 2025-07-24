@@ -67,11 +67,11 @@
 
   .hero-transi-bot {
     position: absolute;
-    bottom: -6rem;
+    bottom: -10vh;
     left: 0;
     right: 0;
     background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(231, 229, 229) 50%, transparent 100%);
-    height: 60%;
+    height: 30vh;
     @media (min-width: 1024px) {
       bottom: -35dvh;
       height: 40%;
@@ -97,16 +97,22 @@
       }
     }
   }
+  .showcase-staggered {
+    p {
+      color: white!important;
+    }
+  }
 
   .home-prez {
     position: relative;
+
     .home-prezTop-transi {
       position: absolute;
-      top: -20%;
+      top: -10%;
       left: 0;
       right: 0;
       background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(231, 229, 229) 50%, transparent 100%);
-      height: 30%;
+      height: 30vh;
       z-index: 1000;
       @media (min-width: 1024px) {
         top: -12vh;
@@ -139,6 +145,7 @@
         object-fit: cover;
       }
     }
+
     .parallax-slab-abs {
       opacity: 0;
       position: absolute;
