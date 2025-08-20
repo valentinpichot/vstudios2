@@ -75,7 +75,7 @@
               <source src="@/assets/video/katespade.mp4" type="video/mp4" />
             </video>
             <video data-speed="clamp(1.7)" loop muted autoplay playsinline preload="auto">
-              <source src="@/assets/video/picard.mp4" type="video/mp4" />
+              <source src="@/assets/video/theKooples.mp4" type="video/mp4" />
             </video>
           </div>
           <div class="hero-transi-bot"></div>

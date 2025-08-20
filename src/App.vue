@@ -19,7 +19,7 @@ const toggleMenu = () => {
         <RouterLink class="nav-logo" to="/" @click="toggleMenu">
           <img src="@/assets/img/logo.png" alt="brand logo v-studios" />
         </RouterLink>
-        <div v-if="!isMobile">
+        <div class="nav-container" v-if="!isMobile">
           <RouterLink to="/">V-Studios</RouterLink>
           <RouterLink class="nav-contact" to="/contact">Contact</RouterLink>
         </div>
