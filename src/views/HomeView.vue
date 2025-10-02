@@ -68,14 +68,14 @@
             <video v-if="!isMobile" data-speed="clamp(2)" loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/coach.mp4" type="video/mp4" />
             </video>
-            <video data-speed="clamp(1.8)"loop muted autoplay playsinline preload="auto">
+            <video data-speed="clamp(1.8)" loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/game.mp4" type="video/mp4" />
             </video>
             <video data-speed="clamp(2.2)" loop muted autoplay playsinline preload="auto">
               <source src="@/assets/video/katespade.mp4" type="video/mp4" />
             </video>
             <video data-speed="clamp(1.7)" loop muted autoplay playsinline preload="auto">
-              <source src="@/assets/video/theKooples.mp4" type="video/mp4" />
+              <source src="@/assets/video/jdelor.mp4" type="video/mp4" />
             </video>
           </div>
           <div class="hero-transi-bot"></div>
@@ -178,7 +178,7 @@ onMounted(() => {
     start: 'top 60%',
     end: '+=70%',
     scrub: 1,
-    toggleActions: 'play reverse play reverse',
+    toggleActions: 'play pause resume restart',
     animation: gsap.fromTo(
       homePrezParallax,
       {
@@ -187,7 +187,6 @@ onMounted(() => {
         width: '90%',
         borderRadius: '15px',
         transform: 'scale(1)',
-        toggleActions: 'play reverse play reverse',
         yoyo: true
       },
       {
@@ -197,7 +196,6 @@ onMounted(() => {
         yoyo: true,
         borderRadius: 0,
         transform: 'scale(1.1)',
-        toggleActions: 'play reverse play reverse'
       }
     )
   })
@@ -206,7 +204,7 @@ onMounted(() => {
     start: 'top 60%',
     end: '+=70%',
     scrub: 1,
-    toggleActions: 'play reverse play reverse',
+    toggleActions: 'play pause resume restart',
     animation: gsap.to(parallaxSlabAbs, {
       ease: 'power4',
       duration: 1,
@@ -232,7 +230,7 @@ onMounted(() => {
           start: 'top 60%',
           end: '+=70%',
           scrub: 1,
-          toggleActions: 'play reverse play reverse'
+          toggleActions: 'play pause resume restart',
         }
       }
     )
